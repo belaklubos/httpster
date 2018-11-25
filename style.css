@@ -1,0 +1,77 @@
+@font-face {
+	font-display: swap;
+	font-family: '';
+	src: url();
+}
+
+:root {
+	--columns: 8;
+	--gap-size: 1px;
+	--grid-size: calc(100vmax / var(--columns));
+	--main-color: black;
+	--contrast-color: white;
+	font-kerning: auto;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	align-items: center;
+	background-color: var(--main-color);
+	box-sizing: border-box;
+	color: var(--contrast-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-feature-settings: "liga"1;
+	height: 100vh;
+	margin: 0;
+	overflow-x: hidden;
+	padding: 0;
+}
+
+@supports (font-variant-ligatures: common-ligatures) {
+	body {
+		font-feature-settings: normal;
+		font-variant-ligatures: common-ligatures;
+	}
+}
+
+main {
+	background-color: var(--contrast-color);
+	border-bottom: 1px solid var(--contrast-color);
+	border-top: 1px solid var(--contrast-color);
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: repeat(8, minmax(calc(100vmax / 8), 1fr));
+	grid-template-rows: repeat(4, minmax(calc(100vmax / 8), 1fr));
+	grid-gap: var(--gap-size);
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 100vw;
+}
+
+h1,
+h2,
+h3 {
+	display: inline-block;
+	margin: 0;
+}
+
+h1,
+h2 {
+	font-feature-settings: 'ss02'1;
+	font-variation-settings: 'wght'10;
+	position: relative;
+}
+
+main>section {
+	align-items: center;
+	background-color: var(--main-color);
+	display: flex;
+	justify-content: center;
+}
+
+.area-1 {}
