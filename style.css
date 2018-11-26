@@ -1,130 +1,150 @@
 @font-face {
-	font-display: swap;
-	font-family: '';
-	src: url();
+  font-display: swap;
+  font-family: '';
+  src: url();
 }
 
 :root {
-	--columns: 8;
-	--gap-size: 1px;
-	--grid-size: calc(100vmax / var(--columns));
-	--main-color: black;
-	--contrast-color: white;
-	font-kerning: auto;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  --columns: 8;
+  --gap-size: 1px;
+  --grid-size: calc(100vmax / var(--columns));
+  --main-color: black;
+  --contrast-color: white;
+  font-kerning: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-resolution: 2dppx) {
+  :root {
+    --gap-size: 0.5px;
+  }
+}
+
+@media (min-resolution: 3dppx) {
+  :root {
+    --gap-size: 0.333px;
+  }
+}
+
+@media (min-resolution: 4dppx) {
+  :root {
+    --gap-size: 0.25px;
+  }
 }
 
 body {
-	align-items: center;
-	background-color: var(--main-color);
-	box-sizing: border-box;
-	color: var(--contrast-color);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	font-feature-settings: "liga"1;
-	height: 100vh;
-	margin: 0;
-	overflow-x: hidden;
-	padding: 0;
+  align-items: center;
+  background-color: var(--main-color);
+  box-sizing: border-box;
+  color: var(--contrast-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-feature-settings: 'liga' 1;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
 }
 
 @supports (font-variant-ligatures: common-ligatures) {
-	body {
-		font-feature-settings: normal;
-		font-variant-ligatures: common-ligatures;
-	}
+  body {
+    font-feature-settings: normal;
+    font-variant-ligatures: common-ligatures;
+  }
 }
 
 main {
-	background-color: var(--contrast-color);
-	border-bottom: 1px solid var(--contrast-color);
-	border-top: 1px solid var(--contrast-color);
-	box-sizing: border-box;
-	display: grid;
-	grid-template-columns: repeat(8, minmax(calc(100vmax / 8), 1fr));
-	grid-template-rows: repeat(4, minmax(calc(100vmax / 8), 1fr));
-	grid-gap: var(--gap-size);
-	margin: 0;
-	padding: 0;
-	position: relative;
-	width: 100vw;
+  background-color: var(--contrast-color);
+  border-bottom: 1px solid var(--contrast-color);
+  border-top: 1px solid var(--contrast-color);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(calc(100vmax / 8), 1fr));
+  grid-template-rows: repeat(4, minmax(calc(100vmax / 8), 1fr));
+  grid-gap: var(--gap-size);
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100vw;
 }
 
 h1,
 h2,
 h3 {
-	display: inline-block;
-	margin: 0;
+  display: inline-block;
+  margin: 0;
 }
 
 h1,
 h2 {
-	font-feature-settings: 'ss02'1;
-	font-variation-settings: 'wght'10;
-	position: relative;
+  font-feature-settings: 'ss02' 1;
+  font-variation-settings: 'wght' 10;
+  position: relative;
 }
 
 img {
-	max-width: 100%;
-	height: 100%;
+  max-width: 100%;
+  height: 100%;
 }
 
-main>section {
-	align-items: center;
-	background-color: var(--main-color);
-	display: flex;
-	justify-content: center;
-	overflow: hidden;
-	position: relative;
+main > section {
+  align-items: center;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
 
-section>div {
-	height: 100%;
-	left: 50%;
-	position: absolute;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	width: 100%;
+section > div {
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 .css__img {
-	transform: scale(1.025);
+  transform: scale(1.025);
 }
 
 .react__img {
-	transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .vue__img {
-	transform: translateY(-5%) scale(1.25);
+  transform: translateY(-5%) scale(1.25);
 }
 
 .area__logo {
-	grid-row: span 2;
+  grid-row: span 2;
 }
 
 .area__signature {
-	grid-column: span 2;
+  grid-column: span 2;
 }
 
 .area__spiral {
-	background: repeating-radial-gradient(circle closest-side,
-		transparent,
-		transparent 0.5rem,
-		var(--main-color) 0.5rem,
-		var(--main-color) 1rem);
-	background-repeat: no-repeat;
-	background-size: cover;
+  background: repeating-radial-gradient(
+    circle closest-side,
+    transparent,
+    transparent 0.5rem,
+    var(--main-color) 0.5rem,
+    var(--main-color) 1rem
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .area__vanilla {
-	grid-row: span 2;
+  grid-row: span 2;
 }
 
 .area__whoami {
-	grid-column: span 2;
-	grid-row: span 2;
+  grid-column: span 2;
+  grid-row: span 2;
 }
