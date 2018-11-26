@@ -98,6 +98,16 @@ section>div {
 	grid-column: span 2;
 }
 
+.area-spiral {
+	background: repeating-radial-gradient(circle closest-side,
+		transparent,
+		transparent 0.5rem,
+		var(--main-color) 0.5rem,
+		var(--main-color) 1rem);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .area-vanilla {
 	grid-row: span 2;
 }
