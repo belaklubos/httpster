@@ -94,6 +94,10 @@ section>div {
 	transform: scale(1.025);
 }
 
+.area-react__img {
+	transform: scale(1.25);
+}
+
 .area-logo {
 	grid-row: span 2;
 }
