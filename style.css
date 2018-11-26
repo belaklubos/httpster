@@ -112,6 +112,7 @@ section > div {
   transform: scale(1.025);
 }
 
+.codepen__img,
 .react__img {
   transform: scale(1.25);
 }
@@ -125,7 +126,7 @@ section > div {
 }
 
 .area__signature {
-  grid-column: span 2;
+  grid-column: span 3;
 }
 
 .area__spiral {
@@ -141,7 +142,7 @@ section > div {
 }
 
 .area__vanilla {
-  grid-row: span 2;
+  grid-row: span 3;
 }
 
 .area__whoami {
