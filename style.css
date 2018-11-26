@@ -90,23 +90,27 @@ section>div {
 	width: 100%;
 }
 
-.area-css__img {
+.css__img {
 	transform: scale(1.025);
 }
 
-.area-react__img {
+.react__img {
 	transform: scale(1.25);
 }
 
-.area-logo {
+.vue__img {
+	transform: translateY(-5%) scale(1.25);
+}
+
+.area__logo {
 	grid-row: span 2;
 }
 
-.area-signature {
+.area__signature {
 	grid-column: span 2;
 }
 
-.area-spiral {
+.area__spiral {
 	background: repeating-radial-gradient(circle closest-side,
 		transparent,
 		transparent 0.5rem,
@@ -116,11 +120,11 @@ section>div {
 	background-size: cover;
 }
 
-.area-vanilla {
+.area__vanilla {
 	grid-row: span 2;
 }
 
-.area-whoami {
+.area__whoami {
 	grid-column: span 2;
 	grid-row: span 2;
 }
