@@ -67,11 +67,27 @@ h2 {
 	position: relative;
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 main>section {
 	align-items: center;
 	background-color: var(--main-color);
 	display: flex;
 	justify-content: center;
+	overflow: hidden;
+	position: relative;
+}
+
+section>div {
+	height: 100%;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
 }
 
 .area-logo {
