@@ -74,4 +74,19 @@ main>section {
 	justify-content: center;
 }
 
-.area-1 {}
+.area-logo {
+	grid-row: span 2;
+}
+
+.area-signature {
+	grid-column: span 2;
+}
+
+.area-vanilla {
+	grid-row: span 2;
+}
+
+.area-whoami {
+	grid-column: span 2;
+	grid-row: span 2;
+}
