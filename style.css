@@ -1,7 +1,7 @@
 @font-face {
   font-display: swap;
-  font-family: '';
-  src: url();
+  font-family: 'Konstant';
+  src: url('/assets/typography/konstant-grotesk.woff2') format('woff2'), url('/assets/typography/konstant-grotesk.woff') format('woff');
 }
 
 :root {
@@ -10,6 +10,9 @@
   --grid-size: calc(100vmax / var(--columns));
   --main-color: black;
   --contrast-color: white;
+  --highlight-color: #ff00ff;
+  --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
+  --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   font-kerning: auto;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -41,6 +44,7 @@ body {
   color: var(--contrast-color);
   display: flex;
   flex-direction: column;
+  font-family: var(--typography-1);
   justify-content: center;
   font-feature-settings: 'liga' 1;
   height: 100vh;
@@ -72,17 +76,14 @@ main {
 }
 
 h1,
-h2,
-h3 {
+h2 {
   display: inline-block;
   margin: 0;
 }
 
-h1,
-h2 {
-  font-feature-settings: 'ss02' 1;
-  font-variation-settings: 'wght' 10;
-  position: relative;
+em {
+  color: var(--highlight-color);
+  font-style: inherit;
 }
 
 img {
@@ -109,28 +110,19 @@ section > div {
   width: 100%;
 }
 
-.css__img {
-  transform: scale(1.025);
-}
-
-.codepen__img,
-.react__img {
-  transform: scale(1.25);
-}
-
-.vue__img {
-  transform: translateY(-5%) scale(1.25);
-}
-
-.area__logo {
+#logo {
   grid-row: span 2;
 }
 
-.area__signature {
+#signature {
   grid-column: span 3;
 }
 
-.area__spiral {
+#signature__img {
+  transform: scale(0.5);
+}
+
+#spiral {
   background: repeating-radial-gradient(
     circle closest-side,
     transparent,
@@ -142,11 +134,28 @@ section > div {
   background-size: cover;
 }
 
-.area__vanilla {
+#vanilla {
   grid-row: span 3;
 }
 
-.area__whoami {
+#whoami {
+  font-size: 1vw;
   grid-column: span 2;
   grid-row: span 2;
+  hyphens: auto;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+#css__img {
+  transform: scale(1.025);
+}
+
+#codepen__img,
+#react__img {
+  transform: scale(1.25);
+}
+
+#vue__img {
+  transform: translateY(-5%) scale(1.25);
 }
