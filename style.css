@@ -88,12 +88,12 @@ main {
 h1,
 h2 {
   display: inline-block;
+  font-weight: normal;
   margin: 0;
 }
 
-em {
+strong {
   color: var(--highlight-color);
-  font-style: inherit;
 }
 
 img {
@@ -145,12 +145,13 @@ section > div {
 }
 
 #whoami {
-  font-size: 1.2vw;
+  font-size: 1.25vw;
   grid-column: span 2;
   grid-row: span 2;
   hyphens: auto;
   line-height: 1.5;
-  padding: 1rem;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 [half-size] {
