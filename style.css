@@ -121,7 +121,20 @@ section > div {
 }
 
 #logo {
+  filter: invert(1);
   grid-row: span 2;
+}
+
+#logotype {
+  font-size: 3vmax;
+  left: 50%;
+  line-height: 1;
+  position: absolute;
+  text-orientation: sideways;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(0.5turn);
+  transform-box: fill-box;
+  writing-mode: vertical-lr;
 }
 
 #signature {
