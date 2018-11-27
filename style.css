@@ -37,6 +37,16 @@
   }
 }
 
+::selection {
+  background: var(--highlight-color);
+  color: var(--contrast-color);
+}
+
+::-moz-selection {
+  background: var(--highlight-color);
+  color: var(--contrast-color);
+}
+
 body {
   align-items: center;
   background-color: var(--main-color);
@@ -118,10 +128,6 @@ section > div {
   grid-column: span 3;
 }
 
-#signature__img {
-  transform: scale(0.5);
-}
-
 #spiral {
   background: repeating-radial-gradient(
     circle closest-side,
@@ -139,23 +145,22 @@ section > div {
 }
 
 #whoami {
-  font-size: 1vw;
+  font-size: 1.2vw;
   grid-column: span 2;
   grid-row: span 2;
   hyphens: auto;
-  line-height: 1.6;
-  padding: 2rem;
+  line-height: 1.5;
+  padding: 1rem;
 }
 
-#css__img {
+[half-size] {
+  transform: scale(0.5);
+}
+
+[scale-slightly] {
   transform: scale(1.025);
 }
 
-#codepen__img,
-#react__img {
+[scale-up] {
   transform: scale(1.25);
-}
-
-#vue__img {
-  transform: translateY(-5%) scale(1.25);
 }
