@@ -6,14 +6,14 @@
 
 :root {
   --gap-size: 1px;
-  --area-size: 180;
-  --area-width: calc(var(--area-size) * 1px);
+  --area-size: 180px;
   --main-color: black;
   --contrast-color: white;
   --highlight-color: #ff00ff;
   --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   --wave-length: 199;
+  --offset: 0;
   font-kerning: auto;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -57,15 +57,26 @@ main {
   border-top: 1px solid var(--contrast-color);
   box-sizing: border-box;
   display: grid;
-  grid-auto-rows: var(--area-width);
+  grid-auto-rows: var(--area-size);
   grid-auto-flow: row dense;
-  grid-template-columns: repeat(auto-fill, minmax(var(--area-width), 1fr));
-  grid-template-rows: repeat(4, minmax(var(--area-width), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--area-size), 1fr));
+  grid-template-rows: repeat(4, minmax(var(--area-size), 1fr));
   grid-gap: var(--gap-size);
   margin: 0;
   padding: 0;
   position: relative;
   width: 100vw;
+}
+
+main::after {
+  background-color: var(--main-color);
+  border-left: 1px solid white;
+  bottom: 0;
+  content: '';
+  left: calc(var(--offset)); 
+  height: var(--area-size);
+  position: absolute;
+  width: 100%;
 }
 
 h1,
