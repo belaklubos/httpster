@@ -7,6 +7,7 @@
 :root {
   --gap-size: 1px;
   --area-size: 180px;
+  --area-width: var(--area-size);
   --main-color: black;
   --contrast-color: white;
   --highlight-color: #ff00ff;
@@ -69,8 +70,14 @@ main {
 }
 
 main::after {
-  background-color: var(--main-color);
-  border-left: 1px solid white;
+  border-left: 1px solid var(--contrast-color);
+  background: linear-gradient(
+    90deg,
+    var(--main-color) calc(var(--area-width) - var(--gap-size)),
+    var(--contrast-color) var(--area-width),
+    var(--main-color) calc(var(--area-width) + var(--gap-size)),
+    var(--main-color) 100%
+  );
   bottom: 0;
   content: '';
   left: calc(var(--offset)); 
