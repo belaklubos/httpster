@@ -168,10 +168,19 @@ section > div {
   padding-right: 20%;
 }
 
+#wheel-of-death {
+  animation: rotate 1s linear infinite;
+  transform: rotate(0) scale(0.5);
+}
+
 [wave] {
-  animation: wave 1s linear forwards;
+  animation: wave 1s linear forwards reverse;
   stroke-dasharray: var(--wave-length);
   stroke-dashoffset: calc(var(--wave-length) * 2);
+}
+
+@keyframes rotate {
+  to { transform: rotate(1turn) scale(0.5) }
 }
 
 @keyframes wave {
