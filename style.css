@@ -5,9 +5,8 @@
 }
 
 :root {
-  --columns: 8;
   --gap-size: 1px;
-  --grid-size: calc(100vmax / var(--columns));
+  --area-size: 180px;
   --main-color: black;
   --contrast-color: white;
   --highlight-color: #ff00ff;
@@ -53,8 +52,6 @@ body {
   background-color: var(--main-color);
   box-sizing: border-box;
   color: var(--contrast-color);
-  display: flex;
-  flex-direction: column;
   font-family: var(--typography-1);
   justify-content: center;
   font-feature-settings: 'liga' 1;
@@ -77,8 +74,9 @@ main {
   border-top: 1px solid var(--contrast-color);
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(8, minmax(calc(100vmax / 8), 1fr));
-  grid-template-rows: repeat(4, minmax(calc(100vmax / 8), 1fr));
+  grid-auto-rows: var(--area-size);
+  grid-template-columns: repeat(auto-fill, minmax(var(--area-size), 1fr));
+  grid-template-rows: repeat(4, minmax(var(--area-size), 1fr));
   grid-gap: var(--gap-size);
   margin: 0;
   padding: 0;
@@ -98,7 +96,7 @@ strong {
 }
 
 svg {
-  height: 100%;
+  height: auto;
   max-width: 100%;
   width: 100%;
 }
@@ -110,15 +108,6 @@ main > section {
   justify-content: center;
   overflow: hidden;
   position: relative;
-}
-
-section > div {
-  height: 100%;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
 }
 
 #logo {
