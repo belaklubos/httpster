@@ -159,6 +159,7 @@ section > div {
 }
 
 #whoami {
+  cursor: context-menu;
   font-size: 1.25vw;
   grid-column: span 2;
   grid-row: span 2;
@@ -170,6 +171,7 @@ section > div {
 
 #wheel-of-death {
   animation: rotate 1s linear infinite;
+  cursor: wait;
   transform: rotate(0) scale(0.5);
 }
 
