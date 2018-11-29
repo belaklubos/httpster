@@ -1,7 +1,9 @@
 @font-face {
   font-display: swap;
   font-family: 'Konstant';
-  src: url('/assets/typography/konstant-grotesk.woff2') format('woff2'), url('/assets/typography/konstant-grotesk.woff') format('woff');
+  src:
+    url('/assets/typography/konstant-grotesk.woff2') format('woff2'),
+    url('/assets/typography/konstant-grotesk.woff') format('woff');
 }
 
 :root {
@@ -164,6 +166,13 @@ main > section {
   animation: rotate 1s linear infinite;
   cursor: wait;
   transform: rotate(0) scale(0.5);
+}
+
+#year {
+  background-color: var(--contrast-color);
+  color: var(--main-color);
+  font-size: calc(3rem + 2.5vw);
+  top: 1rem;
 }
 
 [wave] {
