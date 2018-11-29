@@ -11,8 +11,8 @@
   --area-size: 180px;
   --area-width: var(--area-size);
   --main-color: black;
-  --contrast-color: white;
-  --highlight-color: #ff00ff;
+  --secondary-color: white;
+  --accent-color: #ff00ff;
   --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   --wave-length: 199;
@@ -24,20 +24,20 @@
 }
 
 ::selection {
-  background: var(--highlight-color);
-  color: var(--contrast-color);
+  background: var(--accent-color);
+  color: var(--secondary-color);
 }
 
 ::-moz-selection {
-  background: var(--highlight-color);
-  color: var(--contrast-color);
+  background: var(--accent-color);
+  color: var(--secondary-color);
 }
 
 body {
   align-items: center;
   background-color: var(--main-color);
   box-sizing: border-box;
-  color: var(--contrast-color);
+  color: var(--secondary-color);
   font-family: var(--typography-1);
   justify-content: center;
   font-feature-settings: 'liga' 1;
@@ -55,9 +55,7 @@ body {
 }
 
 main {
-  background-color: var(--contrast-color);
-  border-bottom: 1px solid var(--contrast-color);
-  border-top: 1px solid var(--contrast-color);
+  background-color: var(--secondary-color);
   box-sizing: border-box;
   display: grid;
   grid-auto-rows: var(--area-size);
@@ -72,11 +70,11 @@ main {
 }
 
 main::after {
-  border-left: 1px solid var(--contrast-color);
+  border-left: 1px solid var(--secondary-color);
   background: repeating-linear-gradient(
     90deg,
     var(--main-color) calc(var(--area-width) - var(--gap-size)),
-    var(--contrast-color) var(--area-width),
+    var(--secondary-color) var(--area-width),
     var(--main-color) calc(var(--area-width) + var(--gap-size)),
     var(--main-color) calc(var(--area-width) * 2)
   );
@@ -96,7 +94,7 @@ h2 {
 }
 
 strong {
-  color: var(--highlight-color);
+  color: var(--accent-color);
 }
 
 svg {
@@ -169,7 +167,7 @@ main > section {
 }
 
 #year {
-  background-color: var(--contrast-color);
+  background-color: var(--secondary-color);
   color: var(--main-color);
   font-size: calc(3rem + 2.5vw);
   top: 1rem;
