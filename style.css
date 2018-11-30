@@ -6,16 +6,6 @@
     url('/assets/typography/konstant-grotesk.woff') format('woff');
 }
 
-@font-face {
-  font-display: swap;
-  font-family: 'Formula Condensed';
-  src:
-    url('/assets/typography/formula-condensed.woff2') format('woff2'),
-    url('/assets/typography/formula-condensed.woff') format('woff');
-  unicode-range: U+2192;
-}
-
-
 :root {
   --gap-size: 1px;
   --area-size: 180px;
@@ -80,25 +70,21 @@ main {
 }
 
 main::after {
+  align-items: center;
+  background-color: var(--main-color);
   border-left: 1px solid var(--secondary-color);
-  background: repeating-linear-gradient(
-    90deg,
-    var(--main-color) calc(var(--area-width) - var(--gap-size)),
-    var(--secondary-color) var(--area-width),
-    var(--main-color) calc(var(--area-width) + var(--gap-size)),
-    var(--main-color) calc(var(--area-width) * 2)
-  );
   bottom: 0;
   content: '';
-  left: calc(var(--offset)); 
+  display: flex;
   height: var(--area-size);
+  left: var(--offset);
   position: absolute;
+  text-align: center;
   width: 100%;
 }
 
 h1,
-h2,
-h3 {
+h2 {
   display: inline-block;
   font-weight: normal;
   margin: 0;
@@ -109,6 +95,7 @@ strong {
 }
 
 svg {
+  fill: var(--secondary-color);
   height: auto;
   max-width: 100%;
   width: 100%;
@@ -126,18 +113,6 @@ main > section {
 #logo {
   background-color: var(--secondary-color);
   grid-row: span 2;
-}
-
-#logotype {
-  font-size: calc(1rem + 2vw);
-  left: 50%;
-  line-height: 1;
-  position: absolute;
-  text-orientation: sideways;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(0.5turn);
-  transform-box: fill-box;
-  writing-mode: vertical-lr;
 }
 
 #signature {
@@ -185,8 +160,13 @@ main > section {
 }
 
 [→] {
-  font-family: 'Formula Condensed';
-  font-size: 3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 2rem;
+}
+
+[invert] {
+  filter: invert(1);
 }
 
 [wave] {
