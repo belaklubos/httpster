@@ -12,7 +12,7 @@
   --area-width: var(--area-size);
   --main-color: black;
   --secondary-color: white;
-  --accent-color: #ff00ff;
+  --accent-color: #01ff89;
   --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   --wave-length: 199;
@@ -101,6 +101,10 @@ svg {
   width: 100%;
 }
 
+[gradient] {
+  fill: url(#gradient);
+}
+
 main > section {
   align-items: center;
   background-color: var(--main-color);
@@ -163,6 +167,10 @@ main > section {
   cursor: pointer;
   margin-top: 1rem;
   width: 2rem;
+}
+
+[absolute] {
+  position: absolute;
 }
 
 [invert] {
