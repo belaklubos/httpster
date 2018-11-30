@@ -12,7 +12,8 @@
   --area-width: var(--area-size);
   --main-color: black;
   --secondary-color: white;
-  --accent-color: #01ff89;
+  --accent-color-1: #59efbb;
+  --accent-color-2: #410ed9;
   --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   --wave-length: 199;
@@ -24,12 +25,12 @@
 }
 
 ::selection {
-  background: var(--accent-color);
+  background: var(--accent-color-1);
   color: var(--secondary-color);
 }
 
 ::-moz-selection {
-  background: var(--accent-color);
+  background: var(--accent-color-1);
   color: var(--secondary-color);
 }
 
@@ -91,7 +92,7 @@ h2 {
 }
 
 strong {
-  color: var(--accent-color);
+  color: var(--accent-color-1);
 }
 
 svg {
@@ -165,7 +166,8 @@ main > section {
 
 [→] {
   cursor: pointer;
-  margin-top: 1rem;
+  fill: var(--accent-color-2);
+  margin-top: 0.5rem;
   width: 2rem;
 }
 
