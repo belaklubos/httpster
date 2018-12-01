@@ -142,11 +142,11 @@ main > section {
 
 #whoami {
   cursor: context-menu;
-  font-size: calc(1rem + 0.5vw);
+  font-size: calc(1rem + 0.75vw);
   grid-column: span 2;
   grid-row: span 2;
   hyphens: auto;
-  line-height: 1.5;
+  line-height: 1.618;
   padding-left: 20%;
   padding-right: 20%;
 }
