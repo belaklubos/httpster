@@ -154,7 +154,6 @@ main > section {
 #wheel-of-death {
   animation: rotate 1s linear infinite;
   cursor: wait;
-  transform: rotate(0) scale(0.5);
 }
 
 #year {
@@ -186,15 +185,11 @@ main > section {
 }
 
 @keyframes rotate {
-  to { transform: rotate(1turn) scale(0.5) }
+  to { transform: rotate(1turn) }
 }
 
 @keyframes wave {
   to { stroke-dashoffset: 0 }
-}
-
-[half-size] {
-  transform: scale(0.5);
 }
 
 [scale-slightly] {
@@ -202,5 +197,5 @@ main > section {
 }
 
 [scale-up] {
-  transform: scale(1.25);
+  transform: scale(1.5);
 }
