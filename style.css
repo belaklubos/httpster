@@ -112,7 +112,6 @@ main > section {
 }
 
 #logo {
-  background-color: var(--secondary-color);
   grid-row: span 2;
 }
 
