@@ -1,9 +1,9 @@
 @font-face {
   font-display: swap;
-  font-family: 'Konstant';
+  font-family: "Konstant";
   src:
-    url('/assets/typography/konstant-grotesk.woff2') format('woff2'),
-    url('/assets/typography/konstant-grotesk.woff') format('woff');
+    url("/assets/typography/konstant-grotesk.woff2") format("woff2"),
+    url("/assets/typography/konstant-grotesk.woff") format("woff");
 }
 
 :root {
@@ -16,6 +16,7 @@
   --accent-color-2: #410ed9;
   --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --terminal-fonts: "Space Mono", "Fira Code", "Operator Mono Light", "Courier New", monospace;
   --wave-length: 199;
   --offset: 0;
   font-kerning: auto;
@@ -41,7 +42,7 @@ body {
   color: var(--secondary-color);
   font-family: var(--typography-1);
   justify-content: center;
-  font-feature-settings: 'liga' 1;
+  font-feature-settings: "liga"1;
   height: 100vh;
   margin: 0;
   overflow-x: hidden;
@@ -75,8 +76,8 @@ main::after {
   background-color: var(--main-color);
   border-left: 1px solid var(--secondary-color);
   bottom: 0;
-  content: '';
-  display: flex;
+  content: ";
+display: flex;
   height: var(--area-size);
   left: var(--offset);
   position: absolute;
@@ -102,7 +103,7 @@ svg {
   width: 100%;
 }
 
-main > section {
+main>section {
   align-items: center;
   background-color: var(--main-color);
   display: flex;
@@ -120,15 +121,19 @@ main > section {
 }
 
 #spiral {
-  background: repeating-radial-gradient(
-    circle closest-side,
+  background: repeating-radial-gradient(circle closest-side,
     transparent,
     transparent 0.5rem,
     var(--main-color) 0.5rem,
-    var(--main-color) 1rem
-  );
+    var(--main-color) 1rem);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#terminal {
+  color: var(--accent-color-1);
+  font-family: var(--terminal-fonts);
+  font-size: calc(1rem + 2vw);
 }
 
 #vanilla {
@@ -169,6 +174,10 @@ main > section {
   position: absolute;
 }
 
+[blink] {
+  animation: blink 1s infinite steps(2, start);
+}
+
 [gradient] {
   fill: url(#gradient);
 }
@@ -191,10 +200,20 @@ main > section {
   stroke-dashoffset: calc(var(--wave-length) * 2);
 }
 
+@keyframes blink {
+  to {
+    visibility: hidden
+  }
+}
+
 @keyframes rotate {
-  to { transform: rotate(1turn) }
+  to {
+    transform: rotate(1turn)
+  }
 }
 
 @keyframes wave {
-  to { stroke-dashoffset: 0 }
+  to {
+    stroke-dashoffset: 0
+  }
 }
