@@ -102,10 +102,6 @@ svg {
   width: 100%;
 }
 
-[gradient] {
-  fill: url(#gradient);
-}
-
 main > section {
   align-items: center;
   background-color: var(--main-color);
@@ -174,8 +170,20 @@ main > section {
   position: absolute;
 }
 
+[gradient] {
+  fill: url(#gradient);
+}
+
 [invert] {
   filter: invert(1);
+}
+
+[scale-slightly] {
+  transform: scale(1.025);
+}
+
+[scale-up] {
+  transform: scale(1.5);
 }
 
 [wave] {
@@ -190,12 +198,4 @@ main > section {
 
 @keyframes wave {
   to { stroke-dashoffset: 0 }
-}
-
-[scale-slightly] {
-  transform: scale(1.025);
-}
-
-[scale-up] {
-  transform: scale(1.5);
 }
