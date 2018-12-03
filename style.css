@@ -16,7 +16,6 @@
   --accent-color-2: #410ed9;
   --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-  --code-fonts: "Space Mono", "Fira Code", "Operator Mono Light", "Courier New", monospace;
   --wave-length: 199;
   --offset: 0;
   font-kerning: auto;
@@ -33,6 +32,11 @@
 ::-moz-selection {
   background: var(--accent-color-1);
   color: var(--light-color);
+}
+
+* {
+  box-sizing: border-box;
+  position: relative;
 }
 
 body {
@@ -74,7 +78,6 @@ main {
 main::after {
   align-items: center;
   background-color: var(--dark-color);
-  border-left: 1px solid var(--light-color);
   bottom: 0;
   content: "";
   display: flex;
@@ -93,7 +96,8 @@ h2 {
 }
 
 code {
-  font-family: var(--code-fonts);
+  font-family: inherit;
+  top: 0.5rem;
 }
 
 strong {
@@ -102,6 +106,9 @@ strong {
 
 svg {
   fill: var(--light-color);
+  height: auto;
+  transform-origin: 50% 50%;
+  width: 100%;
 }
 
 main>section {
@@ -113,6 +120,19 @@ main>section {
   position: relative;
 }
 
+aside {
+  left: var(--area-size);
+  mix-blend-mode: difference;
+  opacity: 0.5;
+  position: fixed;
+  top: var(--area-size);
+  z-index: 1;
+}
+
+#circle {
+  fill: var(--accent-color-1);
+}
+
 #logo {
   grid-row: span 2;
 }
@@ -122,18 +142,18 @@ main>section {
 }
 
 #spiral {
+  --spiral-width: 0.75rem;
   background: repeating-radial-gradient(circle closest-side,
     transparent,
-    transparent 0.5rem,
-    var(--dark-color) 0.5rem,
-    var(--dark-color) 1rem);
+    transparent var(--spiral-width),
+    var(--dark-color) var(--spiral-width),
+    var(--dark-color) calc(var(--spiral-width) + var(--gap-size) * 2));
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #terminal {
-  color: var(--accent-color-1);
-  font-size: calc(1rem + 2vw);
+  font-size: calc(3rem + 2.5vw);
 }
 
 #vanilla {
@@ -157,7 +177,7 @@ main>section {
 }
 
 #year {
-  background-color: var(--light-color);
+  background-color: inherit;
   color: var(--dark-color);
   font-size: calc(3rem + 2.5vw);
   top: 1rem;
@@ -176,14 +196,6 @@ main>section {
 
 [blink] {
   animation: blink 1s infinite steps(2, start);
-}
-
-[dark] {
-  color: var(--dark-color);
-}
-
-[light] {
-  color: var(--light-color);
 }
 
 [gradient] {
