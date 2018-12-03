@@ -192,7 +192,7 @@ aside {
 }
 
 [invert] {
-  filter: invert(1);
+  animation: invert 200ms linear infinite alternate;
 }
 
 [scale-slightly] {
@@ -212,6 +212,12 @@ aside {
 @keyframes blink {
   to {
     visibility: hidden
+  }
+}
+
+@keyframes invert {
+  to {
+    filter: invert(1)
   }
 }
 
