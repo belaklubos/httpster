@@ -137,6 +137,10 @@ aside {
   grid-row: span 2;
 }
 
+#rings {
+  display: block;
+}
+
 #signature {
   grid-column: span 3;
 }
