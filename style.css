@@ -137,23 +137,8 @@ aside {
   grid-row: span 2;
 }
 
-#rings {
-  display: block;
-}
-
 #signature {
   grid-column: span 3;
-}
-
-#spiral {
-  --spiral-width: 0.75rem;
-  background: repeating-radial-gradient(circle closest-side,
-    transparent,
-    transparent var(--spiral-width),
-    var(--dark-color) var(--spiral-width),
-    var(--dark-color) calc(var(--spiral-width) + var(--gap-size) * 2));
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 #terminal {
