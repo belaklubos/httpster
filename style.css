@@ -9,13 +9,14 @@
 :root {
   --gap-size: 1px;
   --area-size: 180px;
-  --dark-color: black;
-  --light-color: white;
+  --dark-color: #000;
+  --light-color: #fff;
   --accent-color-1: #59efbb;
   --accent-color-2: #410ed9;
   --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   --offset: 0;
+  --wave-length: 0;
   font-kerning: auto;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
