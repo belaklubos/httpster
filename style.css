@@ -39,6 +39,11 @@
   position: relative;
 }
 
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   align-items: center;
   background-color: var(--dark-color);
@@ -100,8 +105,14 @@ code {
   top: 0.5rem;
 }
 
+b,
 strong {
   color: var(--accent-color-1);
+  font-weight: bolder;
+}
+
+small {
+  font-size: 80%;
 }
 
 svg {
@@ -109,6 +120,10 @@ svg {
   height: auto;
   transform-origin: 50% 50%;
   width: 100%;
+}
+
+svg:not(:root) {
+  overflow: hidden;
 }
 
 main>section {
@@ -127,6 +142,32 @@ aside {
   position: fixed;
   top: var(--area-size);
   z-index: 1;
+}
+
+dialog {
+  background-color: var(--light-color);
+  border: solid;
+  color: var(--dark-color);
+  display: block;
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+template {
+  display: none;
 }
 
 #circle {
@@ -189,6 +230,10 @@ aside {
 
 [gradient] {
   fill: url(#gradient);
+}
+
+[hidden] {
+  display: none;
 }
 
 [invert] {
