@@ -1,17 +1,21 @@
 const $ = element => document.querySelector(element);
 const $$ = elements => [...document.querySelectorAll(elements)];
+const getSVGPathLength = path => $(path) && $(path).getTotalLength();
+const isCSSVariablesSupported = () => 'setProperty' in document.documentElement.style;
+const setCSSCustomProperty = (prop, val) => isCSSVariablesSupported 
+	&& document.documentElement.style.setProperty(prop, val);
 
-const computeOffsets = () => {
+const computeOffset = () => {
 	const last = $('section:last-child');
-	const { style } = document.documentElement;
 	const { left, width } = last.getBoundingClientRect()
 	const offset = Math.ceil(left + width);
-
-	if ('setProperty' in style) {
-		style.setProperty('--area-width', `${width}px`);
-		style.setProperty('--offset', `${offset}px`)
-	}
+	setCSSCustomProperty('--offset', offset)
 }
 
-window.onload = computeOffsets();
-window.addEventListener('resize', computeOffsets);
+document.addEventListener('DOMContentLoaded', () => {
+	const length = Math.ceil(getSVGPathLength('#waves path'));
+	setCSSCustomProperty('--wave-length', length)
+	computeOffset();
+});
+
+window.addEventListener('resize', computeOffset);

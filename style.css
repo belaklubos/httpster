@@ -9,14 +9,12 @@
 :root {
   --gap-size: 1px;
   --area-size: 180px;
-  --area-width: var(--area-size);
   --dark-color: black;
   --light-color: white;
   --accent-color-1: #59efbb;
   --accent-color-2: #410ed9;
   --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-  --wave-length: 199;
   --offset: 0;
   font-kerning: auto;
   text-rendering: optimizeLegibility;
@@ -87,7 +85,7 @@ main::after {
   content: "";
   display: flex;
   height: var(--area-size);
-  left: var(--offset);
+  left: calc(var(--offset) * 1px);
   position: absolute;
   text-align: center;
   width: 100%;
