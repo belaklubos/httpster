@@ -9,6 +9,7 @@
 :root {
   --gap-size: 1px;
   --area-size: 180px;
+  --drip-size: 5rem;
   --dark-color: #000;
   --light-color: #fff;
   --accent-color-1: #59efbb;
@@ -172,6 +173,11 @@ template {
   fill: var(--accent-color-1);
 }
 
+#drips {
+  filter: contrast(80);
+  grid-row: span 3;
+}
+
 #logo {
   grid-row: span 2;
 }
@@ -182,10 +188,6 @@ template {
 
 #terminal {
   font-size: calc(3rem + 2.5vw);
-}
-
-#vanilla {
-  grid-row: span 3;
 }
 
 #whoami {
@@ -223,6 +225,29 @@ template {
 
 [blink] {
   animation: blink 1s infinite steps(2, start);
+}
+
+[drip] {
+  background-color: var(--light-color);
+  border-radius: 50%;
+  content: "";
+  filter: blur(calc(var(--drip-size) / 3));
+  height: var(--drip-size);
+  position: absolute;
+  top: 0;
+  width: var(--drip-size);
+}
+
+[drip]:first-child {
+  position: absolute;
+}
+
+[drip]:last-child {
+  top: calc(100% - var(--drip-size));
+}
+
+[drop] {
+  animation: drip 4s infinite ease-in-out alternate;
 }
 
 [gradient] {
@@ -265,6 +290,12 @@ template {
   }
 }
 
+@keyframes drip {
+  to {
+    top: calc(100% - var(--drip-size));
+  }
+}
+
 @keyframes invert {
   to {
     filter: invert(1)
@@ -282,3 +313,4 @@ template {
     stroke-dashoffset: 0
   }
 }
+
