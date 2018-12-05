@@ -7,10 +7,7 @@ const setCSSCustomProperty = (prop, val) => isCSSVariablesSupported &&
 
 const computeOffset = () => {
 	const last = $('section:last-child');
-	const {
-		left,
-		width
-	} = last.getBoundingClientRect()
+	const { left, width } = last.getBoundingClientRect()
 	const offset = Math.ceil(left + width);
 	setCSSCustomProperty('--offset', offset)
 }

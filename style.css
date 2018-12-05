@@ -100,8 +100,7 @@ h2 {
 }
 
 code {
-  font-family: inherit;
-  top: 0.5rem;
+  transform: scaleX(0.5);
 }
 
 b,
@@ -201,7 +200,6 @@ template {
 }
 
 #wheel-of-death {
-  animation: rotate 1s linear infinite;
   cursor: wait;
 }
 
@@ -237,6 +235,14 @@ template {
 
 [invert] {
   animation: invert 200ms linear infinite alternate;
+}
+
+[rotate] {
+  animation: rotate 1s linear infinite;
+}
+
+[rotate-slowly] {
+  animation-duration: 10s;
 }
 
 [scale-slightly] {
