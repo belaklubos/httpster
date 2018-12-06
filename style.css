@@ -174,8 +174,10 @@ template {
 }
 
 #drips {
-  filter: contrast(80);
+  -webkit-filter: contrast(100);
+  filter: contrast(100);
   grid-row: span 3;
+  width: 100%;
 }
 
 #logo {
@@ -231,7 +233,7 @@ template {
   background-color: var(--light-color);
   border-radius: 50%;
   content: "";
-  filter: blur(calc(var(--drip-size) / 3));
+  filter: blur(1rem);
   height: var(--drip-size);
   position: absolute;
   top: 0;
@@ -292,7 +294,7 @@ template {
 
 @keyframes drip {
   to {
-    top: calc(100% - var(--drip-size));
+    transform: translateY(calc(var(--area-size) * 3));
   }
 }
 
