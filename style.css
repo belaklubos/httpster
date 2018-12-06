@@ -114,6 +114,11 @@ strong {
   font-weight: bolder;
 }
 
+em {
+  font-style: normal;
+  color: var(--accent-color-2);
+}
+
 small {
   font-size: 80%;
 }
@@ -206,7 +211,7 @@ template {
 
 #whoami {
   cursor: context-menu;
-  font-size: calc(1rem + 0.4vw);
+  font-size: calc(1rem + 0.6vw);
   grid-column: span 2;
   grid-row: span 3;
   hyphens: auto;
