@@ -121,8 +121,12 @@ small {
 svg {
   fill: var(--light-color);
   height: auto;
-  transform-origin: 50% 50%;
+  transform-origin: center;
   width: 100%;
+}
+
+path {
+  transform-origin: center;
 }
 
 svg:not(:root) {
@@ -268,8 +272,8 @@ template {
   animation: rotate 1s linear infinite;
 }
 
-[rotate-slowly] {
-  animation-duration: 10s;
+[compass] {
+  animation: compass 5s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
 }
 
 [scale-slightly] {
@@ -335,6 +339,12 @@ template {
 @keyframes rotate {
   to {
     transform: rotate(1turn)
+  }
+}
+
+@keyframes compass {
+  to {
+    transform: rotate(15deg)
   }
 }
 
