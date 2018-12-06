@@ -13,7 +13,8 @@ const computeOffset = () => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-	const color = getComputedStyle(document.documentElement).getPropertyValue('--light-color');
+	const color = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+	$$('[line]').map(line => line.style.stroke = color);
 	$$('[wave]').map(wave => wave.style.stroke = color);
 
 	const length = Math.ceil(getSVGPathLength('[wave]'));
