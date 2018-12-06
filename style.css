@@ -16,8 +16,10 @@
   --accent-color-2: #410ed9;
   --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --gooey-span: 3;
   --offset: 0;
   --wave-length: 0;
+  --last-drip-end-position: calc(var(--area-size) * var(--gooey-span));
   font-kerning: auto;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -67,6 +69,7 @@ body {
 
 main {
   background-color: var(--light-color);
+  border-bottom: var(--gap-size) solid var(--dark-color);
   box-sizing: border-box;
   display: grid;
   grid-auto-rows: var(--area-size);
@@ -75,6 +78,7 @@ main {
   grid-template-rows: repeat(4, minmax(var(--area-size), 1fr));
   grid-gap: var(--gap-size);
   margin: 0;
+  overflow: hidden;
   padding: 0;
   position: relative;
   width: 100vw;
@@ -173,10 +177,9 @@ template {
   fill: var(--accent-color-1);
 }
 
-#drips {
-  -webkit-filter: contrast(100);
-  filter: contrast(100);
-  grid-row: span 3;
+#gooey {
+  grid-row: span var(--gooey-span);
+  filter: contrast(50);
   width: 100%;
 }
 
@@ -238,10 +241,7 @@ template {
   position: absolute;
   top: 0;
   width: var(--drip-size);
-}
-
-[drip]:first-child {
-  position: absolute;
+  will-change: transform;
 }
 
 [drip]:last-child {
@@ -281,7 +281,7 @@ template {
 }
 
 [wave] {
-  animation: wave 1s linear forwards reverse;
+  animation: wave 1s 1s linear forwards reverse;
   stroke-dasharray: var(--wave-length);
   stroke-dashoffset: calc(var(--wave-length) * 2);
 }
@@ -294,7 +294,7 @@ template {
 
 @keyframes drip {
   to {
-    transform: translateY(calc(var(--area-size) * 3));
+    transform: translateY(var(--last-drip-end-position));
   }
 }
 
