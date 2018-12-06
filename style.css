@@ -188,18 +188,13 @@ template {
   width: 100%;
 }
 
-#gooey::after {
-  background-color: var(--main-color);
-  content: "";
-  height: 100%;
-  mix-blend-mode: darken;
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-}
-
 #logo {
   grid-row: span 2;
+}
+
+#rings,
+#whoami {
+  background-color: var(--secondary-color);
 }
 
 #signature {
@@ -211,6 +206,7 @@ template {
 }
 
 #whoami {
+  color: var(--main-color);
   cursor: context-menu;
   font-size: calc(1rem + 0.75vw);
   grid-column: span 2;
@@ -247,6 +243,10 @@ template {
   animation: blink 1s infinite steps(2, start);
 }
 
+[compass] {
+  animation: compass 5s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
+}
+
 [drip] {
   background-color: var(--secondary-color);
   border-radius: 50%;
@@ -279,12 +279,12 @@ template {
   animation: invert 200ms linear infinite alternate;
 }
 
-[rotate] {
-  animation: rotate 1s linear infinite;
+[ring] {
+  fill: var(--main-color);
 }
 
-[compass] {
-  animation: compass 5s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
+[rotate] {
+  animation: rotate 1s linear infinite;
 }
 
 [scale-slightly] {
