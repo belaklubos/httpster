@@ -200,10 +200,6 @@ template {
   grid-row: span 2;
 }
 
-#rings {
-  background-color: var(--secondary-color);
-}
-
 #signature {
   grid-column: span 3;
 }
@@ -246,7 +242,7 @@ template {
 }
 
 [blink] {
-  animation: blink 1s infinite steps(2, start);
+  animation: blink 1s cubic-bezier(1, 0, 0, 1) infinite;
 }
 
 [compass] {
@@ -254,6 +250,7 @@ template {
 }
 
 [drip] {
+  backface-visibility: hidden;
   background-color: var(--secondary-color);
   border-radius: 50%;
   content: "";
@@ -261,6 +258,7 @@ template {
   height: var(--drip-size);
   position: absolute;
   top: 0;
+  transform: translateZ(0);
   width: var(--drip-size);
   will-change: transform;
 }
@@ -285,8 +283,8 @@ template {
   animation: invert 200ms linear infinite alternate;
 }
 
-[ring] {
-  fill: var(--main-color);
+[rings] {
+  stroke: var(--secondary-color);
 }
 
 [rotate] {
@@ -337,7 +335,7 @@ template {
 
 @keyframes blink {
   to {
-    visibility: hidden
+    opacity: 0;
   }
 }
 
@@ -349,25 +347,25 @@ template {
 
 @keyframes invert {
   to {
-    filter: invert(1)
+    filter: invert(1);
   }
 }
 
 @keyframes rotate {
   to {
-    transform: rotate(1turn)
+    transform: rotate(1turn);
   }
 }
 
 @keyframes compass {
   to {
-    transform: rotate(15deg)
+    transform: rotate(15deg);
   }
 }
 
 @keyframes wave {
   to {
-    stroke-dashoffset: 0
+    stroke-dashoffset: 0;
   }
 }
 
