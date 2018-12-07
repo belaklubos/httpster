@@ -19,6 +19,7 @@
   --supplement-color-3: #FFF;
   --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --gooey-opacity: 0.868;
   --gooey-span: 3;
   --offset: 0;
   --wave-length: 0;
@@ -27,6 +28,14 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --main-color: #000;
+    --secondary-color: #FFF;
+    --gooey-opacity: 1;
+  }
 }
 
 ::selection {
@@ -192,7 +201,7 @@ template {
 #gooey {
   grid-row: span var(--gooey-span);
   filter: contrast(50);
-  opacity: 0.868;
+  opacity: var(--gooey-opacity);
   width: 100%;
 }
 
