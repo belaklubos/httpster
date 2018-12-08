@@ -14,7 +14,7 @@
   --main-color: #DDD;
   --secondary-color: #000;
   --accent-color-1: #00745B;
-  --accent-color-2: #3F3970;
+  --accent-color-2: #3E1BBC;
   --supplement-color-1: #DEA2B0;
   --supplement-color-2: #BDAAA2;
   --supplement-color-3: #9EA36C;
@@ -286,6 +286,10 @@ template {
 
 [rotate] {
   animation: rotate 1s linear infinite;
+}
+
+[rotate-slowly] {
+  animation-duration: 10s;
 }
 
 [scale-slightly] {
