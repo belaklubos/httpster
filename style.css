@@ -9,14 +9,15 @@
 :root {
   --gap-size: 1px;
   --area-size: 180px;
-  --drip-size: 5rem;
+  --area-half-size: calc(var(--area-size) / 2);
+  --drip-size: var(--area-half-size);
   --main-color: #DDD;
   --secondary-color: #000;
   --accent-color-1: #00745B;
-  --accent-color-2: #FFF509;
+  --accent-color-2: #3F3970;
   --supplement-color-1: #DEA2B0;
   --supplement-color-2: #BDAAA2;
-  --supplement-color-3: #FFF;
+  --supplement-color-3: #9EA36C;
   --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   --gooey-opacity: 0.868;
@@ -33,7 +34,7 @@
 @media screen and (prefers-color-scheme: dark) {
   :root {
     --main-color: #000;
-    --secondary-color: #FFF;
+    --secondary-color: #DDD;
     --gooey-opacity: 1;
   }
 }
@@ -160,34 +161,10 @@ main>section {
 }
 
 aside {
-  right: var(--area-size);
   mix-blend-mode: difference;
   opacity: 0.5;
   position: fixed;
-  top: var(--area-size);
   z-index: 1;
-}
-
-dialog {
-  background-color: var(--secondary-color);
-  border: solid;
-  color: var(--main-color);
-  display: block;
-  height: -moz-fit-content;
-  height: -webkit-fit-content;
-  height: fit-content;
-  left: 0;
-  margin: auto;
-  padding: 1em;
-  position: absolute;
-  right: 0;
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
-  width: fit-content;
-}
-
-dialog:not([open]) {
-  display: none;
 }
 
 template {
@@ -206,7 +183,14 @@ template {
 }
 
 #logo {
-  grid-row: span 2;
+  background-color: var(--secondary-color);
+  grid-column: span 2;
+  grid-row: span 3;
+  padding: var(--area-half-size);
+}
+
+#logotype {
+  fill: var(--main-color);
 }
 
 #signature {
@@ -217,19 +201,25 @@ template {
   font-size: calc(3rem + 2.5vw);
 }
 
+#triangle {
+  fill: var(--accent-color-2);
+}
+
+#wheel-of-death {
+  cursor: wait;
+}
+
 #whoami {
+  background-color: var(--secondary-color);
+  color: var(--main-color);
   cursor: context-menu;
   font-size: calc(1rem + 0.6vw);
   grid-column: span 2;
   grid-row: span 3;
   hyphens: auto;
   line-height: 1.4;
-  padding-left: 20%;
-  padding-right: 20%;
-}
-
-#wheel-of-death {
-  cursor: wait;
+  padding-left: var(--area-half-size);
+  padding-right: var(--area-half-size);
 }
 
 #year {
@@ -239,19 +229,17 @@ template {
   top: 1rem;
 }
 
-[→] {
-  cursor: pointer;
-  fill: var(--accent-color-2);
-  margin-top: 0.5rem;
-  width: 2rem;
-}
-
 [absolute] {
   position: absolute;
 }
 
 [blink] {
   animation: blink 1s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+[circle] {
+  right: var(--area-half-size);
+  top: var(--area-half-size);
 }
 
 [compass] {
@@ -306,6 +294,11 @@ template {
 
 [scale-up] {
   transform: scale(1.5);
+}
+
+[triangle] {
+  bottom: var(--area-half-size);
+  left: var(--area-half-size);
 }
 
 [wave] {
