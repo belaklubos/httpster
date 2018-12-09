@@ -204,12 +204,32 @@ template {
   width: 100%;
 }
 
-#logotype {
+#js-vs-ts {
+  grid-column: span 2;
+}
+
+#logo {
   background-color: var(--secondary-color);
   color: var(--main-color);
   grid-column: span 2;
   grid-row: span 3;
   padding: var(--area-half-size);
+}
+
+#logotype:after,
+#logotype:before {
+  content: attr(data-heading);
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+#logotype:after {
+  transform: translateY(-80%);
+}
+
+#logotype:before {
+  transform: translateY(80%);
 }
 
 #signature {
