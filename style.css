@@ -131,7 +131,7 @@ h3 {
 h1,
 h2 {
   font-family: "Digestive";
-  font-size: calc(5rem + 3vw);
+  font-size: calc(4rem + 4vw);
   text-transform: uppercase;
 }
 
@@ -283,6 +283,7 @@ template {
 
 [compass] {
   animation: compass 5s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
+  position: absolute;
 }
 
 [drip] {
