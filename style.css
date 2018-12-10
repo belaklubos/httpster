@@ -90,6 +90,8 @@ body {
   }
 }
 
+
+
 main {
   background-color: var(--secondary-color);
   border-bottom: var(--gap-size) solid var(--main-color);
@@ -161,16 +163,16 @@ small {
 svg {
   fill: var(--secondary-color);
   height: auto;
-  transform-origin: center;
   width: 100%;
-}
-
-path {
-  transform-origin: center;
 }
 
 svg:not(:root) {
   overflow: hidden;
+}
+
+svg,
+path {
+  transform-origin: center;
 }
 
 main>section {
@@ -231,8 +233,14 @@ template {
   transform: translateY(80%);
 }
 
-#signature {
+#name {
   grid-column: span 3;
+}
+
+@media screen and (max-width: 543px) {
+  #name {
+    grid-column: span 2;
+  }
 }
 
 #terminal {
@@ -276,6 +284,12 @@ template {
   will-change: opacity;
 }
 
+[center] {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 [circle] {
   right: var(--area-half-size);
   top: var(--area-half-size);
@@ -307,10 +321,6 @@ template {
 
 [drop] {
   animation: drip 4s infinite ease-in-out alternate;
-}
-
-[gradient] {
-  fill: url(#gradient);
 }
 
 [hidden] {
