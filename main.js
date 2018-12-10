@@ -23,4 +23,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	computeOffset();
 });
 
-window.addEventListener('resize', computeOffset);
+window.addEventListener('resize', computeOffset, { passive: true });

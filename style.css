@@ -213,7 +213,6 @@ template {
   color: var(--main-color);
   grid-column: span 2;
   grid-row: span 3;
-  padding: var(--area-half-size);
 }
 
 #logotype:after,
@@ -274,6 +273,7 @@ template {
 
 [blink] {
   animation: blink 1s cubic-bezier(1, 0, 0, 1) infinite;
+  will-change: opacity;
 }
 
 [circle] {
@@ -284,6 +284,7 @@ template {
 [compass] {
   animation: compass 5s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
   position: absolute;
+  will-change: transform;
 }
 
 [drip] {
@@ -318,6 +319,7 @@ template {
 
 [invert] {
   animation: invert 200ms linear infinite alternate;
+  will-change: filter;
 }
 
 [rings] {
@@ -333,7 +335,7 @@ template {
 }
 
 [scale-slightly] {
-  transform: scale(1.05);
+  transform: scale(1.15);
 }
 
 [scale-up] {
@@ -349,6 +351,7 @@ template {
   animation: wave 1s 1s linear forwards;
   stroke-dasharray: var(--wave-length);
   stroke-dashoffset: calc(var(--wave-length) * 2);
+  will-change: transform;
 }
 
 [wave]:nth-child(2) {
