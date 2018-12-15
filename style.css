@@ -187,6 +187,7 @@ main>section {
 aside {
   mix-blend-mode: difference;
   opacity: 0.5;
+  pointer-events: none;
   position: fixed;
   z-index: 1;
 }
@@ -279,6 +280,15 @@ template {
   position: absolute;
 }
 
+[absolute-center] {
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 100%;
+}
+
 [blink] {
   animation: blink 1s cubic-bezier(1, 0, 0, 1) infinite;
   will-change: opacity;
@@ -325,11 +335,6 @@ template {
 
 [hidden] {
   display: none;
-}
-
-[invert] {
-  animation: invert 200ms linear infinite alternate;
-  will-change: filter;
 }
 
 [rings] {
@@ -401,12 +406,6 @@ template {
 @keyframes drip {
   to {
     transform: translateY(var(--last-drip-end-position));
-  }
-}
-
-@keyframes invert {
-  to {
-    filter: invert(1);
   }
 }
 
