@@ -30,6 +30,9 @@
   --supplement-color-3: #9EA36C;
   --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-size-heading: calc(4rem + 4vw);
+  --font-size-text: calc(var(--font-size-heading) / 4);
+  --font-size-xxxl: calc(3rem + 2.5vw);
   --gooey-opacity: 0.868;
   --gooey-span: 3;
   --offset: 0;
@@ -50,12 +53,12 @@
 }
 
 ::selection {
-  background: var(--accent-color-1);
+  background-color: var(--supplement-color-1);
   color: var(--secondary-color);
 }
 
 ::-moz-selection {
-  background: var(--accent-color-1);
+  background-color: var(--supplement-color-1);
   color: var(--secondary-color);
 }
 
@@ -131,7 +134,7 @@ h3 {
 h1,
 h2 {
   font-family: "Digestive";
-  font-size: calc(4rem + 4vw);
+  font-size: var(--font-size-heading);
   text-transform: uppercase;
 }
 
@@ -169,11 +172,6 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-svg,
-path {
-  transform-origin: center;
-}
-
 main>section {
   align-items: center;
   background-color: var(--main-color);
@@ -206,7 +204,10 @@ template {
   width: 100%;
 }
 
-#js-vs-ts {
+#contact {
+  background-color: var(--accent-color-2);
+  color: var(--supplement-color-2);
+  font-size: var(--font-size-text);
   grid-column: span 2;
 }
 
@@ -244,7 +245,7 @@ template {
 }
 
 #terminal {
-  font-size: calc(3rem + 2.5vw);
+  font-size: var(--font-size-xxxl);
 }
 
 #triangle {
@@ -259,7 +260,7 @@ template {
   background-color: var(--secondary-color);
   color: var(--main-color);
   cursor: context-menu;
-  font-size: calc(1rem + 1vw);
+  font-size: var(--font-size-text);
   grid-column: span 2;
   grid-row: span 3;
   hyphens: auto;
@@ -271,7 +272,7 @@ template {
 #year {
   background-color: inherit;
   color: var(--main-color);
-  font-size: calc(3rem + 2.5vw);
+  font-size: var(--font-size-xxxl);
   top: 1rem;
 }
 
@@ -334,6 +335,30 @@ template {
 
 [hidden] {
   display: none;
+}
+
+[link] {
+  height: 100%;
+  overflow-x: hidden;
+  transform: translateY(40%);
+}
+
+[link]:after {
+  color: transparent;
+  content: attr(data-text) attr(data-text);
+  left: 0;
+  line-height: 2;
+  position: absolute;
+  text-decoration: underline;
+  text-decoration-color: var(--supplement-color-1);
+  text-decoration-style: wavy;
+  top: 0;
+  white-space: nowrap;
+  width: 100%;
+}
+
+[link]:hover:after {
+  animation: wavy 1s linear infinite;
 }
 
 [rings] {
@@ -423,5 +448,11 @@ template {
 @keyframes wave {
   to {
     stroke-dashoffset: 0;
+  }
+}
+
+@keyframes wavy {
+  to {
+    transform: translateX(-50%);
   }
 }
