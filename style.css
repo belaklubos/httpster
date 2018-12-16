@@ -243,10 +243,6 @@ template {
   }
 }
 
-#radial {
-  background: repeating-radial-gradient(var(--main-color), var(--secondary-color) 1px, var(--secondary-color) calc(1rem), var(--main-color) calc(1px + 1rem), var(--main-color) calc(2px + 1rem));
-}
-
 #terminal {
   font-size: calc(3rem + 2.5vw);
 }
@@ -429,4 +425,3 @@ template {
     stroke-dashoffset: 0;
   }
 }
-
