@@ -201,6 +201,7 @@ template {
   font-size: var(--font-size-text);
   grid-column: span 2;
   transition: all 0.25s var(--custom-easing-2);
+  overflow: hidden;
   white-space: nowrap;
 }
 
@@ -213,18 +214,24 @@ template {
   top: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease;
   width: var(--bubble-size);
+  will-change: transform;
 }
 
-#lets-talk:focus,
-#lets-talk:hover {
-  font-size: calc(var(--font-size-text) * 1.5);
+#lets-talk [link] {
+  transition: transform 0.25s var(--custom-easing-2);
+  will-change: transform;
+}
+
+#lets-talk:focus [link],
+#lets-talk:hover [link] {
+  transform: scale(1.5);
 }
 
 #lets-talk:focus::before,
 #lets-talk:hover::before {
-  transform: translate(-50%, -50%) scale(3);
+  transform: translate(-50%, -50%) scale(2);
 }
 
 #hello {
