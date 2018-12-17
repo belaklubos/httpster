@@ -33,6 +33,9 @@
   --font-size-heading: calc(4rem + 4vw);
   --font-size-text: calc(var(--font-size-heading) / 4);
   --font-size-xxxl: calc(3rem + 2.5vw);
+  --bubble-size: 18rem;
+  --custom-easing-1: cubic-bezier(1, 0, 0, 1);
+  --custom-easing-2: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   --offset: 0;
   --wave-length: 0;
   font-kerning: auto;
@@ -193,11 +196,35 @@ template {
   fill: var(--accent-color-1);
 }
 
-#contact {
-  background-color: var(--accent-color-2);
+#lets-talk {
   color: var(--main-color);
   font-size: var(--font-size-text);
   grid-column: span 2;
+  transition: all 0.25s var(--custom-easing-2);
+  white-space: nowrap;
+}
+
+#lets-talk::before {
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  content: '';
+  height: var(--bubble-size);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  transition: all 0.25s ease;
+  width: var(--bubble-size);
+}
+
+#lets-talk:focus,
+#lets-talk:hover {
+  font-size: calc(var(--font-size-text) * 1.5);
+}
+
+#lets-talk:focus::before,
+#lets-talk:hover::before {
+  transform: translate(-50%, -50%) scale(3);
 }
 
 #hello {
@@ -286,7 +313,7 @@ template {
 }
 
 [blink] {
-  animation: blink 1s cubic-bezier(1, 0, 0, 1) infinite;
+  animation: blink 1s var(--custom-easing-1) infinite;
   will-change: opacity;
 }
 
@@ -302,7 +329,7 @@ template {
 }
 
 [compass] {
-  animation: compass 5s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite alternate;
+  animation: compass 5s var(--custom-easing-2) infinite alternate;
   position: absolute;
   will-change: transform;
 }
@@ -314,30 +341,6 @@ template {
 
 [hidden] {
   display: none;
-}
-
-[link] {
-  height: 100%;
-  overflow-x: hidden;
-  transform: translateY(40%);
-}
-
-[link]:after {
-  color: transparent;
-  content: attr(data-text) attr(data-text);
-  left: 0;
-  line-height: 2;
-  position: absolute;
-  text-decoration: underline;
-  text-decoration-color: var(--main-color);
-  text-decoration-style: wavy;
-  top: 0;
-  white-space: nowrap;
-  width: 100%;
-}
-
-[link]:hover:after {
-  animation: wavy 1s linear infinite forwards;
 }
 
 [rings] {
@@ -454,11 +457,5 @@ template {
 @keyframes wave {
   to {
     stroke-dashoffset: 0;
-  }
-}
-
-@keyframes wavy {
-  to {
-    transform: translateX(-49%);
   }
 }
