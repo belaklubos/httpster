@@ -33,7 +33,7 @@
   --font-size-heading: calc(4rem + 4vw);
   --font-size-text: calc(var(--font-size-heading) / 4);
   --font-size-xxxl: calc(3rem + 2.5vw);
-  --bubble-size: 18rem;
+  --bubble-size: 15rem;
   --custom-easing-1: cubic-bezier(1, 0, 0, 1);
   --custom-easing-2: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   --offset: 0;
@@ -220,6 +220,7 @@ template {
 }
 
 #lets-talk [link] {
+  top: 0.25rem;
   transition: transform 0.25s var(--custom-easing-2);
   will-change: transform;
 }
@@ -231,7 +232,7 @@ template {
 
 #lets-talk:focus::before,
 #lets-talk:hover::before {
-  transform: translate(-50%, -50%) scale(2);
+  transform: translate(-50%, -50%) scale(3);
 }
 
 #hello {
@@ -341,7 +342,7 @@ template {
   will-change: transform;
 }
 
-[hello] {
+[hell] {
   opacity: 0;
   will-change: opacity;
 }
@@ -384,57 +385,6 @@ template {
   stroke-dasharray: var(--wave-length);
   stroke-dashoffset: calc(var(--wave-length) * 2);
   will-change: transform;
-}
-
-[hello]:nth-child(1) {
-  animation-delay: 1s;
-}
-
-[hello]:nth-child(2),
-[wave]:nth-child(2) {
-  animation-delay: 1.1s;
-}
-
-[hello]:nth-child(3),
-[wave]:nth-child(3) {
-  animation-delay: 1.2s;
-}
-
-[hello]:nth-child(4),
-[wave]:nth-child(4) {
-  animation-delay: 1.3s;
-}
-
-[hello]:nth-child(5),
-[wave]:nth-child(5) {
-  animation-delay: 1.4s;
-}
-
-[hello]:nth-child(6),
-[wave]:nth-child(6) {
-  animation-delay: 1.5s;
-}
-
-[hello]:nth-child(7),
-[wave]:nth-child(7) {
-  animation-delay: 1.6s;
-}
-
-[hello]:nth-child(8),
-[wave]:nth-child(8) {
-  animation-delay: 1.7s;
-}
-
-[hello]:nth-child(9) {
-  animation-delay: 1.8s;
-}
-
-[hello]:nth-child(10) {
-  animation-delay: 1.9s;
-}
-
-[hello]:nth-child(11) {
-  animation-delay: 2s;
 }
 
 @keyframes blink {
