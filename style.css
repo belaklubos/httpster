@@ -25,9 +25,7 @@
   --accent-color-1: #00745B;
   --accent-color-2: #3E1BBC;
   --supplement-color-1: #DEA2B0;
-  --supplement-color-2: #BDAAA2;
-  --supplement-color-3: #9EA36C;
-  --supplement-color-4: #FFF;
+  --supplement-color-2: #FFF;
   --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   --font-size-heading: calc(4rem + 4vw);
@@ -225,12 +223,18 @@ template {
   will-change: transform;
 }
 
-#lets-talk:focus [link],
+
+#lets-talk:focus-within [link],
 #lets-talk:hover [link] {
   transform: scale(1.5);
 }
 
-#lets-talk:focus::before,
+#lets-talk:focus-within [link] {
+  color: var(--supplement-color-2);
+  outline: none;
+}
+
+#lets-talk:focus-within::before,
 #lets-talk:hover::before {
   transform: translate(-50%, -50%) scale(3);
 }
