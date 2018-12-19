@@ -40,7 +40,7 @@
   --wave-length: 0;
   --x: 0;
   --y: 0;
-  cursor: url(http://chrishawkins.us/blank.cur), none;
+  cursor: none;
   font-kerning: auto;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -336,7 +336,7 @@ template {
 }
 
 [circle] {
-  left: calc(var(--area-size) * 1.5);
+  left: 50vw;
   bottom: 0;
 }
 
@@ -358,6 +358,12 @@ template {
   width: var(--cursor-size);
   will-change: transform;
   z-index: 1;
+}
+
+@media (pointer: coarse) {
+  [cursor] {
+    display: none;
+  }
 }
 
 [hell] {
@@ -394,7 +400,7 @@ template {
 }
 
 [triangle] {
-  right: calc(var(--area-size) * 1.5);
+  right: 50vw;
   top: 0;
 }
 
