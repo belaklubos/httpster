@@ -28,14 +28,19 @@
   --supplement-color-2: #FFF;
   --typography-1: "Konstant", "Fugue", "Futura", "Helvetica";
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-  --font-size-heading: calc(4rem + 4vw);
+  --font-size-heading: calc(6rem + 2vw);
   --font-size-text: calc(var(--font-size-heading) / 4);
   --font-size-xxxl: calc(3rem + 2.5vw);
   --bubble-size: 15rem;
+  --cursor-size: 3rem;
+  --cursor-half-size: calc(var(--cursor-size) / 2);
   --custom-easing-1: cubic-bezier(1, 0, 0, 1);
   --custom-easing-2: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   --offset: 0;
   --wave-length: 0;
+  --x: 0;
+  --y: 0;
+  cursor: url(http://chrishawkins.us/blank.cur), none;
   font-kerning: auto;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -287,14 +292,9 @@ template {
   fill: var(--accent-color-2);
 }
 
-#wheel-of-death {
-  cursor: wait;
-}
-
 #whoami {
   background-color: var(--secondary-color);
   color: var(--main-color);
-  cursor: context-menu;
   font-size: var(--font-size-text);
   grid-column: span 2;
   grid-row: span 3;
@@ -336,14 +336,28 @@ template {
 }
 
 [circle] {
-  right: calc(var(--area-size) * 1.5);
-  top: 0;
+  left: calc(var(--area-size) * 1.5);
+  bottom: 0;
 }
 
 [compass] {
   animation: compass 5s var(--custom-easing-2) infinite alternate;
   position: absolute;
   will-change: transform;
+}
+
+[cursor] {
+  background-color: var(--supplement-color-2);
+  border-radius: 50%;
+  content: '';
+  height: var(--cursor-size);
+  left: calc(var(--x) - var(--cursor-half-size));
+  pointer-events: none;
+  position: absolute;
+  top: calc(var(--y) - var(--cursor-half-size));
+  width: var(--cursor-size);
+  will-change: transform;
+  z-index: 1;
 }
 
 [hell] {
@@ -380,8 +394,8 @@ template {
 }
 
 [triangle] {
-  bottom: 0;
-  left: calc(var(--area-size) * 1.5);
+  right: calc(var(--area-size) * 1.5);
+  top: 0;
 }
 
 [wave] {

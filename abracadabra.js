@@ -13,6 +13,13 @@ const computeOffset = () => {
 	setCSSCustomProperty('--offset', offset)
 }
 
+const followTheWhiteCursor = () => {
+	document.addEventListener('mousemove', ({ pageX, pageY }) => {
+		setCSSCustomProperty('--x', `${pageX}px`)
+		setCSSCustomProperty('--y', `${pageY}px`)
+	});
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	const color = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
 	const hells = $$('[hell]');
@@ -38,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	setCSSCustomProperty('--wave-length', length)
 
 	computeOffset();
+	followTheWhiteCursor()
 });
 
 window.addEventListener('resize', computeOffset, { passive: true });
