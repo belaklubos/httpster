@@ -32,7 +32,7 @@
   --font-size-text: calc(var(--font-size-heading) / 4);
   --font-size-xxxl: calc(3rem + 2.5vw);
   --bubble-size: 15rem;
-  --cursor-size: 3rem;
+  --cursor-size: 3.75rem;
   --cursor-half-size: calc(var(--cursor-size) / 2);
   --custom-easing-1: cubic-bezier(1, 0, 0, 1);
   --custom-easing-2: cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -50,19 +50,18 @@
 @media screen and (prefers-color-scheme: dark) {
   :root {
     --main-color: #000;
-    --secondary-color: #DDD;
-    --accent-color-2: var(--supplement-color-1);
+    --secondary-color: #ECD44C;
   }
 }
 
 ::selection {
   background-color: var(--supplement-color-1);
-  color: var(--secondary-color);
+  color: currentColor;
 }
 
 ::-moz-selection {
   background-color: var(--supplement-color-1);
-  color: var(--secondary-color);
+  color: currentColor;
 }
 
 * {
