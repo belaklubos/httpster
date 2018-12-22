@@ -22,7 +22,10 @@ const followTheWhiteCursor = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 	const color = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+	const cursor = $('[cursor]');
 	const hells = $$('[hell]');
+	const length = Math.ceil(getSVGPathLength('[wave]'));
+	const links = $$('[data-section]');
 	const lines = $$('[line]');
 	const waves = $$('[wave]');
 	
@@ -41,7 +44,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
-	const length = Math.ceil(getSVGPathLength('[wave]'));
+	links.map(link => {
+		link.addEventListener('mouseover', ({ currentTarget }) => {
+			const { dataset: { section } } = currentTarget;
+
+			cursor.textContent = section;
+			cursor.style.transform = 'scale(1.5)';
+			setCSSCustomProperty('--cursor-size', '8rem');
+		});
+
+		link.addEventListener('mouseout', () => {
+			cursor.textContent = null;
+			cursor.style.transform = 'scale(0.4)';
+		});
+	});
+
 	setCSSCustomProperty('--wave-length', length)
 
 	computeOffset();

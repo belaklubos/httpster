@@ -32,7 +32,7 @@
   --font-size-text: calc(var(--font-size-heading) / 4);
   --font-size-xxxl: calc(3rem + 2.5vw);
   --bubble-size: 15rem;
-  --cursor-size: 3.75rem;
+  --cursor-size: 3rem;
   --cursor-half-size: calc(var(--cursor-size) / 2);
   --custom-easing-1: cubic-bezier(1, 0, 0, 1);
   --custom-easing-2: cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -348,12 +348,15 @@ template {
 [cursor] {
   background-color: var(--supplement-color-2);
   border-radius: 50%;
-  content: '';
+  color: var(--accent-color-2);
   height: var(--cursor-size);
+  line-height: calc(var(--cursor-size) + 0.1rem);
   left: calc(var(--x) - var(--cursor-half-size));
   pointer-events: none;
   position: absolute;
+  text-align: center;
   top: calc(var(--y) - var(--cursor-half-size));
+  transition: transform 0.15s var(--custom-easing-2);
   width: var(--cursor-size);
   will-change: transform;
   z-index: 1;
