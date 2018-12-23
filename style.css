@@ -348,7 +348,7 @@ template {
 [cursor] {
   background-color: var(--supplement-color-2);
   border-radius: 50%;
-  color: var(--accent-color-2);
+  color: var(--accent-color-1);
   height: var(--cursor-size);
   line-height: calc(var(--cursor-size) + 0.1rem);
   left: calc(var(--x) - var(--cursor-half-size));
@@ -360,6 +360,15 @@ template {
   width: var(--cursor-size);
   will-change: transform;
   z-index: 1;
+}
+
+[cursor]:not(:empty)::after {
+  content: "→";
+  font-size: calc(var(--cursor-size) / 4);
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15%;
+  position: absolute;
 }
 
 @media (pointer: coarse) {
